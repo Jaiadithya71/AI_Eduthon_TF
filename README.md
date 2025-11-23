@@ -14,6 +14,89 @@ EduSlide AI is a full-stack solution for **automated, AI-driven educational pres
 
 ***
 
+## 🏛️ System Architecture
+
+```mermaid
+graph TB
+    subgraph UI[" 🎨 Frontend Layer"]
+        A[👨‍🏫 Teacher<br/>Streamlit Interface]
+        A1[Enter Topic & Config]
+        A --> A1
+    end
+    
+    subgraph GW["🔌 API Gateway"]
+        B[FastAPI Backend]
+        B1[/health<br/>/generate<br/>/download]
+        B --> B1
+    end
+    
+    subgraph BS["⚙️ Backend Services"]
+        subgraph AI["🧠 AI Content Engine"]
+            C1[Content Service<br/>Groq LLM llama3-70b]
+            C2[Outline Generator<br/>Topic Breakdown]
+            C3[Content Synthesizer<br/>Slides + Notes + Quiz]
+        end
+        
+        subgraph MEDIA["🖼️ Media Service"]
+            D1[Pexels API<br/>Image Repository]
+            D2[Image Matching<br/>Context Search]
+        end
+        
+        subgraph FILE["📝 File Generation"]
+            E1[PPTX Generator<br/>python-pptx]
+            E2[Theme Engine<br/>Color Schemes]
+            E3[Layout Builder<br/>Slide Structure]
+        end
+    end
+    
+    subgraph INFRA["☁️ Cloud Infrastructure"]
+        F1[Uvicorn Server]
+        F2[AWS/GCP/Azure]
+        F3[Docker/Kubernetes]
+    end
+    
+    subgraph OUTPUT["📤 Output"]
+        G[📥 Download<br/>presentation.pptx]
+    end
+    
+    A1 -->|Topic + Config| B
+    B --> C1
+    B --> C2
+    B --> C3
+    B --> D1
+    C1 --> E1
+    C2 --> E1
+    C3 --> E1
+    D1 --> D2
+    D2 --> E1
+    E1 --> E2
+    E2 --> E3
+    E3 --> G
+    B -.-> F1
+    F1 -.-> F2
+    F2 -.-> F3
+    
+    classDef frontend fill:#B3E5FC,stroke:#01579B,stroke-width:2px,color:#000
+    classDef gateway fill:#78909C,stroke:#37474F,stroke-width:3px,color:#FFF
+    classDef aiEngine fill:#C5E1A5,stroke:#558B2F,stroke-width:2px,color:#000
+    classDef media fill:#C5E1A5,stroke:#558B2F,stroke-width:2px,color:#000
+    classDef fileGen fill:#FFCC80,stroke:#E65100,stroke-width:2px,color:#000
+    classDef infra fill:#E1BEE7,stroke:#4A148C,stroke-width:2px,color:#000
+    classDef output fill:#B3E5FC,stroke:#01579B,stroke-width:2px,color:#000
+    
+    class A,A1 frontend
+    class B,B1 gateway
+    class C1,C2,C3 aiEngine
+    class D1,D2 media
+    class E1,E2,E3 fileGen
+    class F1,F2,F3 infra
+    class G output
+```
+
+***
+
+
+
 ## 🏗️ Repository Structure
 
 ```
