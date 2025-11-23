@@ -26,8 +26,8 @@ graph TB
     
     subgraph GW["🔌 API Gateway"]
         B[FastAPI Backend]
-        B1[/health<br/>/generate<br/>/download]
-        B --> B1
+        B1["Endpoints:<br/>/health<br/>/generate<br/>/download"]
+          B --> B1
     end
     
     subgraph BS["⚙️ Backend Services"]
