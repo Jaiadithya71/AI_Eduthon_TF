@@ -186,9 +186,10 @@ API server base: `http://localhost:8000`
 ## 🤝 Team & Attribution
 
 - **Created for IIT Bombay Eduthon 2025**
+- **Team Id- Ai e-250531**
 - **Team: TechnoSquad**
 - **Team Lead:** Arya Chighare
-- **Team Members:** _Add full list here_
+- **Team Members:** Jaiadithya A, Veeresh Devadhar
 
 ***
 
