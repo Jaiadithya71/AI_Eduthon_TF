@@ -1,10 +1,10 @@
 # 🎓 EduSlide AI (AI_Eduthon_TF)
 
-*Team Id- Ai e-250531*
-*Team: TechnoSquad*
-*Team Lead: Arya Chighare*
-*Team Members: Jaiadithya A, Veeresh Devadhar*
-*Project: Personalized AI Presentation Generator for Educators – IIT Bombay Eduthon 2025*
+- *Team Id- Ai e-250531*
+- *Team: TechnoSquad*
+- *Team Lead: Arya Chighare*
+- *Team Members: Jaiadithya A, Veeresh Devadhar*
+- *Project: Personalized AI Presentation Generator for Educators – IIT Bombay Eduthon 2025*
 
 ***
 
